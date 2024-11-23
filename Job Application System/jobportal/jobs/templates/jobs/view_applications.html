@@ -1,0 +1,17 @@
+<h1>Applications for {{ job.title }}</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Resume</th>
+        <th>Submitted Date</th>
+    </tr>
+    {% for application in applications %}
+        <tr>
+            <td>{{ application.name }}</td>
+            <td>{{ application.email }}</td>
+            <td><a href="{{ application.resume.url }}">Download</a></td>
+            <td>{{ application.submitted_date }}</td>
+        </tr>
+    {% endfor %}
+</table>
